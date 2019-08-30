@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Material | UI</title>
+    <!-- <link rel="stylesheet" href="./css/materialize.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    /> -->
+  </head>
+  <style>
+    body,
+    html {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .root {
+      width: 100%;
+      height: 100%;
+    }
+    .showcase {
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("./Images/showcase2.jpg");
+      background-position-x: 50%;
+      background-position-y: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h1,
+    h3 {
+      margin: 0;
+      color: white;
+    }
+    span {
+      color: #e61c3f;
+    }
+    .showcase-text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+    }
+    .showcase-maintext {
+      margin-bottom: 20px;
+      font-size: 60px;
+      color: white;
+      font-weight: 400;
+    }
+    .showcase-subtext {
+      margin-bottom: 50px;
+      font-size: 35px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .showcase-button {
+      height: 50px;
+      border: 3px solid white;
+      font-size: 18px;
+      color: white;
+      padding: 0 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 25px;
+      cursor: pointer;
+      user-select: none;
+      background: rgba(85, 85, 85, 0.2);
+    }
+
+    .showcase-button:hover {
+      background: #e61c3f;
+      color: white;
+      border: 3px solid #e61c3f;
+    }
+    .whoami {
+      width: 100%;
+      height: 350px;
+      display: flex;
+    }
+    .whoami-left {
+      width: 30%;
+      height: 100%;
+      background-color: #dadada;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 65px;
+      font-weight: 500;
+      color: #e61c3f;
+    }
+    .whoami-right {
+      width: 70%;
+      height: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    ul {
+      display: flex;
+      height: 56px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: transparent;
+    }
+    .darken-nav {
+      background: rgba(27, 23, 20, 1);
+    }
+    ul li {
+      padding: 0 18px;
+      list-style-type: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    ul li a {
+      text-decoration: none;
+      color: #dadada;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 500;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid transparent;
+    }
+    ul li a.current {
+      border-bottom: 2px solid #e61c3f;
+      color: #fff;
+    }
+    ul li a:hover:not(.current) {
+      color: #fff;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .site-section {
+      width: 100%;
+      height: 350px;
+      padding: 20px 30px;
+      box-sizing: border-box;
+    }
+    .section-contact {
+      background: #1b1714;
+      color: #f2f2f2;
+    }
+    .section-title-bar {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .section-title {
+      margin-bottom: 8px;
+    }
+
+    .section-body {
+      width: 100%;
+      height: calc(100% - 48px);
+      display: flex;
+    }
+    .section-card {
+      width: 33.33%;
+      padding: 10px 30px;
+      box-sizing: border-box;
+    }
+    .section-head-text {
+      margin-bottom: 20px;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .section-head-quotes p {
+      font-weight: 400;
+      color: #dadada;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .section-head-quotes q {
+      font-weight: 400;
+      color: #dadada;
+      font-style: italic;
+      text-align: justify;
+    }
+  </style>
+  <body>
+    <div class="root">
+      <nav>
+        <ul class="main-nav">
+          <li><a href="#home" class="nav-item current">Home</a></li>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#portfolio" class="nav-item">Portfolio</a></li>
+          <li><a href="#contact" class="nav-item">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="showcase" id="home">
+        <div class="showcase-text-container">
+          <h1 class="showcase-maintext">Hi, I'm <span>Jeff</span></h1>
+          <h3 class="showcase-subtext">
+            Electronics Engineer <span>|</span> Programming Enthusiast
+          </h3>
+          <div class="showcase-button">More About Me</div>
+        </div>
+      </div>
+      <div class="whoami" id="about">
+        <div class="whoami-left">
+          Who am I ?
+        </div>
+        <div class="whoami-right">
+          I am a....
+        </div>
+      </div>
+      <div class="section-portfolio site-section" id="portfolio">
+        <div class="section-title-bar">
+          <div class="section-title">My Works</div>
+          <div class="section-line"></div>
+        </div>
+        <div class="section-body"></div>
+      </div>
+      <div class="section-contact site-section" id="contact">
+        <div class="section-title-bar">
+          <div class="section-title">Get In <span>Touch</span> With Me</div>
+          <div class="section-line"></div>
+        </div>
+        <div class="section-body">
+          <div class="section-card">
+            <div class="section-head-text">This drives me</div>
+            <div class="section-head-quotes">
+              <p>1 Corinthians 15:10 King James Version (KJV)</p>
+              <q>
+                But by the grace of God I am what I am: and his grace which was
+                bestowed upon me was not in vain; but I laboured more abundantly
+                than they all: yet not I, but the grace of God which was with
+                me.</q
+              >
+            </div>
+          </div>
+          <div class="section-card">
+            <div class="section-head-text">Where to find me</div>
+            <div class="section-head-text">Home Address</div>
+            <div class="section-head-quotes">
+              <p>
+                715 Sumulong Street, Brgy. San Juan, Morong, Rizal | Philippines
+              </p>
+            </div>
+            <div class="section-head-text">Church Address</div>
+            <div class="section-head-quotes">
+              <div style="width: 100%; text-align: center; color: #E61C3F;">
+                Grace City Church International Ministries
+              </div>
+              <p>
+                Sitio Ziplang, Brgy. San Guillermo, Morong, Rizal | Philippines
+              </p>
+            </div>
+          </div>
+          <div class="section-card">
+            <div class="section-head-text">Me on social media and mobile</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //on scroll
+
+      let handleScrollEvent = function() {
+        "use strict";
+        const nav = document.querySelector(".main-nav");
+        let scroll =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0;
+        if (scroll >= 50) nav.classList.add("darken-nav");
+        else nav.classList.remove("darken-nav");
+      };
+
+      //on nav button click
+      let handleNavSwitch = function(elem) {
+        let navItems = document.querySelectorAll(".nav-item");
+        [].forEach.call(navItems, function(nav) {
+          nav.classList.remove("current");
+        });
+        elem.classList.add("current");
+      };
+
+      //set events
+      function setEvents() {
+        let navItems = document.querySelectorAll(".nav-item");
+        [].forEach.call(navItems, function(nav) {
+          nav.onclick = function() {
+            handleNavSwitch(this);
+          };
+        });
+      }
+      window.onbeforeunload = function() {
+        document.body.scrollTop = 0;
+        window.pageYOffset = 0;
+        document.documentElement.scrollTop = 0;
+      };
+      window.onload = function() {
+        setEvents();
+
+        window.addEventListener("scroll", handleScrollEvent);
+      };
+    </script>
+  </body>
+</html>
